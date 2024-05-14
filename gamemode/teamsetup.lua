@@ -4,14 +4,14 @@ local teams = {}
 
 teams[0] = {
     name = "Red",
-    color = Vector(1.0, 0, 0),
+    color = Color(255, 0, 0),
     weapons = {"weapon_crowbar"}
 }
 
 teams[1] = {
     name = "Blue",
-    color = Vector(0, 0, 1.0),
-    weapons = {"weapon_crowbar"}
+    color = Color(0, 0, 255),
+    weapons = {"weapon_crowbar", "weapon_crossbow"}
 }
 
 function ply:SetupTeam(n)
@@ -26,9 +26,12 @@ function ply:SetupTeam(n)
     self:SetRunSpeed(1000)
     self:SetModel("models/player/Group03m/Male_0" .. math.random(1, 9) .. ".mdl")
 
+    self:GiveWeapons(n)
+
 end
 
 function ply:GiveWeapons(n)
     for k, weapon in pairs(teams[n].weapons) do 
         self:Give(weapon)
+    end
 end

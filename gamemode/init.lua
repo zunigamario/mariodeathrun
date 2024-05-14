@@ -11,7 +11,7 @@ local pl = FindMetaTable("Player")
 function GM:PlayerSpawn(ply)
     print("Player " .. ply:Nick() .. " has spawned")
     ply:SetupHands()
-    ply.SetupTeam(math.random(0, 1))
+    ply:SetupTeam(math.random(0, 1))
 end
 
 function GM:PlayerSetHandsModel( ply, ent )

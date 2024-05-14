@@ -1,0 +1,8 @@
+"Mario's Deathrun"
+{
+	"base"		"base"
+	"title"		"Mario's Deathrun"
+	"maps"		"^deathrun_"
+	"menusystem"	"1"
+	"workshopid"	""
+}
