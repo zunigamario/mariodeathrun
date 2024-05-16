@@ -22,11 +22,12 @@ function ply:SetupTeam(n)
 
     self:SetHealth(150)
     self:SetMaxHealth(200)
-    self:SetWalkSpeed(100)
+    self:SetWalkSpeed(200)
     self:SetRunSpeed(1000)
     self:SetModel("models/player/Group03m/Male_0" .. math.random(1, 9) .. ".mdl")
 
     self:GiveWeapons(n)
+    self:CrosshairDisable()
 
 end
 

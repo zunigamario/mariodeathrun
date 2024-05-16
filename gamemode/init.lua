@@ -25,3 +25,31 @@ function GM:PlayerSetHandsModel( ply, ent )
  end
 
 
+function GM:PlayerShouldTakeDamage( ply, attacker )
+    local att 
+    if (attacker:IsPlayer()) then 
+        att = attacker
+
+        if (ply:Team() == att:Team()) then 
+            
+
+    elseif (attacker:IsWorld()) then
+        return true 
+    elseif (attacker:IsNPC()) then
+        return false
+    else
+        att = attacker:GetOwner()
+    end
+
+    PrintMessage(tostring(type(attacker)))
+    PrintMessage(tostring(type(attacker)))
+
+    -- local plyT = ply:Team()
+    -- local attT = att:Team()
+
+    -- if (plyT == attT) then 
+    --     return false
+    -- end
+
+    return true
+end
